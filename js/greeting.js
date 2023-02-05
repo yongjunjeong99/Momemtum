@@ -1,34 +1,36 @@
-const loginForm = document.querySelector('#login-form');
-const loginInput = document.querySelector('#login-form input');
-const greeting = document.querySelector('#greeting');
-const todoForm = document.querySelector('#todo-form');
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const todoForm = document.querySelector("#todo-form");
+const todoSection = document.querySelector("#todo__section");
 
-const HIDDEN_CLASSNAME = 'hidden';
-const USERNAME_KEY = 'username';
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
-function onLoginSubmit(event){
+function onLoginSubmit(event) {
   event.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
   localStorage.setItem(USERNAME_KEY, loginInput.value);
   paintGreeting();
 }
 
-function paintGreeting(){
+function paintGreeting() {
   const username = localStorage.getItem(USERNAME_KEY);
   greeting.innerText = `Hello ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   todoForm.classList.remove(HIDDEN_CLASSNAME);
+  todoSection.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginForm.addEventListener('submit', onLoginSubmit);
+loginForm.addEventListener("submit", onLoginSubmit);
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-if(savedUsername === null){
+if (savedUsername === null) {
   // show the form
   loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginForm.addEventListener('submit', onLoginSubmit);
-} else{
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
   // show the greetings
   paintGreeting();
 }

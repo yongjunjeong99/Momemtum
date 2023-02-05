@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <section id="main__section">
@@ -17,7 +21,7 @@
       <form id="login-form" class="hidden">
         <div>What is your name?</div>
         <input required maxlength="15" type="text" />
-        <button>Log In</button>
+        <button>LogIn</button>
       </form>
       <h1 id="greeting" class="hidden"></h1>
     </section>
@@ -28,12 +32,32 @@
         <span></span>
       </div>
     </section>
-    <section id="todo__section">
-      <form id="todo-form" class="hidden">
-        <div>What is your main focus for today?</div>
-        <input type="text" required />
-      </form>
-      <ul id="todo-list"></ul>
+    <section id="todo__section" class="hidden">
+      <div id="todo_memo">
+        <form id="todo-form" class="hidden">
+          <h2>What is your ChirstMas Plan?</h2>
+          <input type="text" required />
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+    </section>
+    <section class="music-box">
+      <span>BGM</span>
+      <div class="music-btn">
+        <span class="music-btn music-on material-symbols-outlined">
+          play_circle
+        </span>
+        <span class="music-btn music-pause material-symbols-outlined">
+          pause
+        </span>
+        <span class="music-btn music-off material-symbols-outlined">
+          music_off
+        </span>
+      </div>
+      <div class="vol-box">
+        <span>VOL</span>
+        <input type="range" class="vol-control" min="1" max="10" />
+      </div>
     </section>
     <section id="quote__section">
       <div id="quote">
@@ -41,11 +65,22 @@
         <span></span>
       </div>
     </section>
+    <section id="christmas__section">
+      <span>ChristMas CountDown</span>
+      <div class="js-clock"></div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/157b3c4d50.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/background.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/snow.js"></script>
+    <script src="js/christmasTime.js"></script>
+    <script src="js/bgm.js"></script>
   </body>
 </html>
